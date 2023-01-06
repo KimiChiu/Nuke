@@ -160,17 +160,17 @@ extension GIFAnimatable {
   }
 
   /// Stop animating and free up GIF data from memory.
-  func prepareForReuse() {
+  public func prepareForReuse() {
     animator?.prepareForReuse()
   }
 
   /// Start animating GIF.
-  func startAnimatingGIF() {
+  public func startAnimatingGIF() {
     animator?.startAnimating()
   }
 
   /// Stop animating GIF.
-  func stopAnimatingGIF() {
+  public func stopAnimatingGIF() {
     animator?.stopAnimating()
   }
 
