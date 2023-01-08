@@ -7,7 +7,8 @@ import Foundation
 #if (os(iOS) || os(tvOS)) && !targetEnvironment(macCatalyst)
 import UIKit
 
-public final class AnimatedImageView: UIImageView, GIFAnimatable {
+public class AnimatedImageView: UIImageView, GIFAnimatable {
+
     /// A lazy animator.
     lazy var animator: Animator? = {
         return Animator(withDelegate: self)
@@ -22,5 +23,21 @@ public final class AnimatedImageView: UIImageView, GIFAnimatable {
         }
         updateImageIfNeeded()
     }
+    
+    // Start animating GIF.
+    public func startAnimatingGIF() {
+      animator?.startAnimating()
+    }
+
+    // Stop animating GIF.
+    public func stopAnimatingGIF() {
+      animator?.stopAnimating()
+    }
+
+    // update image by current frame
+    public func updateDisplayIfNeeded() {
+        updateImageIfNeeded();
+    }
+
 }
 #endif
