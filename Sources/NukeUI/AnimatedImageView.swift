@@ -23,15 +23,17 @@ public class AnimatedImageView: UIImageView, GIFAnimatable {
         }
         updateImageIfNeeded()
     }
-    
+
     // Start animating GIF.
     public func startAnimatingGIF() {
-      animator?.startAnimating()
+        animator?.manuallyStopped = false;
+        animator?.startAnimating()
     }
 
     // Stop animating GIF.
     public func stopAnimatingGIF() {
-      animator?.stopAnimating()
+        animator?.manuallyStopped = true;
+        animator?.stopAnimating()
     }
 
     // update image by current frame
