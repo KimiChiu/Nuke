@@ -24,6 +24,10 @@ public class AnimatedImageView: UIImageView, GIFAnimatable {
         updateImageIfNeeded()
     }
 
+    public func autoPlay() {
+        animator?.manuallyStopped = false;
+    }
+
     // Start animating GIF.
     public func startAnimatingGIF() {
         animator?.manuallyStopped = false;
